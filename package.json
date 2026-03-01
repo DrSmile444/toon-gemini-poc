@@ -12,7 +12,10 @@
     "test": "npx vitest",
     "bump-version": "npx tsx ./scripts/bump-version.script.ts && npm audit fix",
     "parse-llm-response": "npx tsx ./scripts/split-plain-code.ts",
-    "format": "npx prettier . --write"
+    "format": "npx prettier . --write",
+    "poc:logs": "tsx src/poc/logs-poc.ts",
+    "poc:moderation": "tsx src/poc/moderation-poc.ts",
+    "poc:report": "tsx src/poc/report-poc.ts"
   },
   "keywords": [
     "typescript",
