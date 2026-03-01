@@ -1,26 +1,34 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "moduleResolution": "node",
-    "target": "esnext",
-    "baseUrl": "./src",
+    "target": "ES2022",
+    "lib": [
+      "ES2022"
+    ],
+    "module": "ES2022",
+    "moduleResolution": "Bundler",
     "strict": true,
-    "allowJs": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
     "skipLibCheck": true,
+    "types": [
+      "node"
+    ],
     "paths": {
-      "@config/*": ["config/*"],
-      "@decorators/*": ["decorators/*"],
-      "@fixtures/*": ["fixtures/*"],
-      "@interfaces/*": ["interfaces/*"],
-      "@interfaces": ["interfaces"],
-      "@models/*": ["models/*"],
-      "@pages/*": ["pages/*"],
-      "@test-data/*": ["test-data/*"],
-      "@tests/*": ["tests/*"],
-      "@utils/*": ["utils/*"]
-    },
-    "resolveJsonModule": true,
-    "esModuleInterop": true
+      "@data/*": [
+        "./src/data/*"
+      ],
+      "@poc/*": [
+        "./src/poc/*"
+      ],
+      "@prompt/*": [
+        "./src/prompt/*"
+      ],
+      "@shared/*": [
+        "./src/shared/*"
+      ]
+    }
   },
-  "include": [".eslint", "src", "tests", "scripts", "vitest.config.ts"]
+  "include": [
+    "src/**/*.ts"
+  ]
 }
