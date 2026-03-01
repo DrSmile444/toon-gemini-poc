@@ -1,13 +1,25 @@
 import chalk from 'chalk';
 
-import { getEnv as getEnvironment } from '@shared/env.js';
+import { getEnvironment } from '@shared/env.js';
 import { loadJsonFile, loadPromptTemplate, makeDataBlock, renderPrompt } from '@shared/prompt-renderer.js';
 import { printRun, runGeminiOnce } from '@shared/run-gemini.js';
 
+/**
+ * Shape of the log data loaded from `logs.data.json`.
+ * Field names match the JSON keys exactly (abbreviated to minimise file size).
+ */
 interface LogsData {
-  events: Array<{ t: string; svc: string; lvl: string; msg: string; trace: string }>;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  events: { t: string; svc: string; lvl: string; msg: string; trace: string }[];
 }
 
+/**
+ * Entry point for the Logs PoC.
+ *
+ * Loads the log event data and the Logs prompt template, serialises the data
+ * into a toon-encoded block, renders the final prompt and sends it to Gemini.
+ * The model is asked to produce a concise root-cause narrative for the events.
+ */
 async function main() {
   const environment = getEnvironment();
 
@@ -16,13 +28,13 @@ async function main() {
   const userRequest = 'Explain what likely happened, what the primary root cause is, and what we should do to prevent it. Keep it crisp.';
 
   const template = await loadPromptTemplate('./src/prompt/logs.prompt.md');
-  const data = await loadJsonFile<LogsData>('./src/data/logs.data.json');
+  const logsPayload = await loadJsonFile<LogsData>('./src/data/logs.data.json');
 
-  const dataBlock = makeDataBlock(data, format);
+  const dataBlock = makeDataBlock(logsPayload, format);
   const prompt = renderPrompt(template, { user_request: userRequest, data_block: dataBlock });
 
-  console.log(chalk.bold.magenta('Running Logs PoC'));
-  console.log(chalk.dim(`Model: ${environment.GEMINI_MODEL} | Format: ${format}`));
+  console.info(chalk.bold.magenta('Running Logs PoC'));
+  console.info(chalk.dim(`Model: ${environment.GEMINI_MODEL} | Format: ${format}`));
 
   const result = await runGeminiOnce(environment, prompt);
 
@@ -31,5 +43,6 @@ async function main() {
 
 main().catch((error) => {
   console.error(chalk.red(String(error)));
+  // eslint-disable-next-line unicorn/no-process-exit
   process.exit(1);
 });
