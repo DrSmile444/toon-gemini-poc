@@ -1,0 +1,22 @@
+{
+  "incidents": [
+    {
+      "id": "INC-12",
+      "sev": "P1",
+      "start": "2026-02-28 10:01",
+      "mitigatedAt": "2026-02-28 10:28",
+      "minToMitigate": 27,
+      "summary": "Checkout failures caused by payment gateway timeouts",
+      "impact": "EU players could not complete purchases; ~18% checkout drop"
+    },
+    {
+      "id": "INC-13",
+      "sev": "P2",
+      "start": "2026-02-28 14:10",
+      "mitigatedAt": "2026-02-28 14:55",
+      "minToMitigate": 45,
+      "summary": "OTP delivery delays affected 2FA login",
+      "impact": "Some players unable to login; increased support volume"
+    }
+  ]
+}

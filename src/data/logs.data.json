@@ -1,0 +1,11 @@
+{
+  "events": [
+    { "t": "10:01:12", "svc": "api", "lvl": "ERR", "msg": "500 on POST /checkout", "trace": "ab12" },
+    { "t": "10:01:13", "svc": "payments", "lvl": "ERR", "msg": "timeout to bank gateway (10s)", "trace": "ab12" },
+    { "t": "10:01:14", "svc": "api", "lvl": "WARN", "msg": "retry payment #1", "trace": "ab12" },
+    { "t": "10:01:20", "svc": "payments", "lvl": "ERR", "msg": "circuit breaker open (gateway)", "trace": "ab12" },
+    { "t": "10:01:22", "svc": "api", "lvl": "ERR", "msg": "checkout aborted: payment_unavailable", "trace": "ab12" },
+    { "t": "10:03:40", "svc": "infra", "lvl": "INFO", "msg": "egress latency spike detected in eu-west", "trace": "-" },
+    { "t": "10:08:10", "svc": "payments", "lvl": "INFO", "msg": "timeouts normalized after provider reroute", "trace": "-" }
+  ]
+}
