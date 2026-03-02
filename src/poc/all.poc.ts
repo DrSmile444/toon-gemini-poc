@@ -1,6 +1,9 @@
 import './logs.poc';
 import './moderation.poc';
 import './report.poc';
+import './simple.poc';
+import './simple-toon.poc';
+import './token-comparison.poc';
 
 /**
  * This file imports all the individual PoCs so they can be run together.
