@@ -27,7 +27,7 @@ Return **JSON only** with shape:
     {
       id: 'm1',
       label: 'allowed|borderline|harassment|hate|threat|spam',
-      severity: 0, // 0 = no issue, 1 = minor, 2 = moderate, 3 = severe
+      severity: 1, // 1 = minor, 2 = moderate, 3 = severe
       reason: 'short',
       action: 'allow|warn|remove|temp_mute|ban',
       rewrite_suggestion: 'optional safer rewrite (only if borderline/harassment)',
@@ -42,3 +42,4 @@ Return **JSON only** with shape:
 - Prefer the least severe label that still keeps users safe
 - Treat sarcasm and context carefully
 - Do not add new message IDs or change message text
+- If message is ok, don't return it in the output. Output only messages that need action or borderline cases that could be safer with a rewrite
