@@ -3,6 +3,7 @@
   "version": "1.3.23",
   "main": "src/main.ts",
   "scripts": {
+    "poc:simple": "tsx src/poc/simple.poc.ts",
     "poc:all": "tsx src/poc/all.poc.ts",
     "poc:logs": "tsx src/poc/logs.poc.ts",
     "poc:moderation": "tsx src/poc/moderation.poc.ts",
