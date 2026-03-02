@@ -51,6 +51,11 @@ export function makeDataBlock(payload: unknown, format: DataFormat): string {
   return ['```json', json, '```'].join('\n');
 }
 
+export interface RenderPromptVariables {
+  user_request: string;
+  data_block: string;
+}
+
 /**
  * Renders a Mustache template with the provided variables.
  *
@@ -58,6 +63,6 @@ export function makeDataBlock(payload: unknown, format: DataFormat): string {
  * @param variables - An object containing `user_request` and `data_block` placeholders.
  * @returns The fully rendered prompt string ready to send to the model.
  */
-export function renderPrompt(template: string, variables: { user_request: string; data_block: string }): string {
+export function renderPrompt(template: string, variables: RenderPromptVariables): string {
   return Mustache.render(template, variables);
 }

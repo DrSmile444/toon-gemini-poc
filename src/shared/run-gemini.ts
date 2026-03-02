@@ -21,7 +21,7 @@ export interface GeminiRunResult {
  * @param x - The value to serialise.
  * @returns A human-readable string representation of {@link x}.
  */
-function safeStringify(x: unknown): string {
+export function safeStringify(x: unknown): string {
   try {
     return JSON.stringify(x, null, 2);
   } catch {
@@ -37,7 +37,7 @@ function safeStringify(x: unknown): string {
  * @param geminiResponse - The raw value returned by `generateContent`.
  * @returns The extracted text, or a JSON serialisation of the whole response.
  */
-function extractText(geminiResponse: GenerateContentResponse): string {
+export function extractText(geminiResponse: GenerateContentResponse): string {
   if (typeof geminiResponse?.text === 'string') {
     return geminiResponse.text;
   }
@@ -54,7 +54,7 @@ function extractText(geminiResponse: GenerateContentResponse): string {
  * @param geminiResponse - The raw value returned by `generateContent`.
  * @returns The usage-metadata object, or `undefined` when it is absent.
  */
-function extractUsage(geminiResponse: unknown): unknown {
+export function extractUsage(geminiResponse: unknown): unknown {
   // Prefer response.usageMetadata if present
   if (typeof geminiResponse !== 'object' || geminiResponse === null) {
     return undefined;
