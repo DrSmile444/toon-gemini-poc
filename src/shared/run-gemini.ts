@@ -32,34 +32,15 @@ function safeStringify(x: unknown): string {
 /**
  * Extracts the plain text string from a Gemini SDK response object.
  *
- * The Google GenAI SDK has shipped different response shapes across versions.
- * This function handles three known shapes so the rest of the code stays
- * version-agnostic:
- *   1. `{ text: "..." }` – direct string property.
- *   2. `{ response: { text(): string } }` – text exposed as a method.
- *   3. `{ response: { text: string } }` – text as a nested string property.
- *
  * Falls back to a JSON dump when none of the known shapes match.
  *
  * @param geminiResponse - The raw value returned by `generateContent`.
  * @returns The extracted text, or a JSON serialisation of the whole response.
  */
 function extractText(geminiResponse: GenerateContentResponse): string {
-  // Handle a few shapes across SDK versions:
-  // 1) { text: "..." }
-  // 2) { response: { text(): string } }
-  // 3) { candidates: ... }
   if (typeof geminiResponse?.text === 'string') {
     return geminiResponse.text;
   }
-
-  // if (typeof geminiResponse?.response?.text === 'function') {
-  //   return String(geminiResponse.response.text());
-  // }
-  //
-  // if (typeof geminiResponse?.response?.text === 'string') {
-  //   return String(geminiResponse.response.text);
-  // }
 
   return safeStringify(geminiResponse);
 }
