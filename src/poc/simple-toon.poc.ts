@@ -1,5 +1,5 @@
 import { GoogleGenAI } from '@google/genai';
-import { encode } from '@toon-format/toon';
+import { decode, encode } from '@toon-format/toon';
 import chalk from 'chalk';
 import Mustache from 'mustache';
 
@@ -63,6 +63,11 @@ const geminiResponse = await ai.models.generateContent({
 });
 
 const usageMetadata = extractUsage(geminiResponse);
-const text = extractText(geminiResponse).trim();
+const text = extractText(geminiResponse).replace('```toon', '').replace('```', '').trim();
 
 printRun('Moderation: Message classification', { promptTokens, usageMetadata, text }, prompt);
+
+const jsonResult = decode(text);
+
+console.info(chalk.green('\nDecoded response (toon → json):'));
+console.info(chalk.gray(JSON.stringify(jsonResult, null, 2)));

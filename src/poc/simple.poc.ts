@@ -62,6 +62,11 @@ const geminiResponse = await ai.models.generateContent({
 });
 
 const usageMetadata = extractUsage(geminiResponse);
-const text = extractText(geminiResponse).trim();
+const text = extractText(geminiResponse).replace('```json', '').replace('```', '').trim();
 
 printRun('Moderation: Message classification', { promptTokens, usageMetadata, text }, prompt);
+
+const jsonResult = JSON.parse(text) as Record<string, unknown>;
+
+console.info(chalk.yellow('\nParsed model output (JSON):'));
+console.info(chalk.blue(JSON.stringify(jsonResult, null, 2)));
