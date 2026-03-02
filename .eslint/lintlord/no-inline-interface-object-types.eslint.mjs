@@ -44,7 +44,7 @@
  */
 
 /** @type {string} */
-const RULE_NAME = 'no-inline-interface-object-types';
+export const RULE_NAME = 'no-inline-interface-object-types';
 
 /**
  * Convert a string to PascalCase.
@@ -250,7 +250,7 @@ function isExportedInterface(interfaceNode) {
 /**
  * @type {import('eslint').Rule.RuleModule}
  */
-const noInlineInterfaceObjectTypesRule = {
+export const noInlineInterfaceObjectTypesRule = {
   meta: {
     type: 'suggestion',
     docs: {
@@ -492,14 +492,5 @@ const noInlineInterfaceObjectTypesRule = {
         }
       },
     };
-  },
-};
-
-/**
- * Inline “local plugin” for flat config.
- */
-export const plugin = {
-  rules: {
-    [RULE_NAME]: noInlineInterfaceObjectTypesRule,
   },
 };
