@@ -20,19 +20,22 @@ Each row is a message. Use the text as the source of truth.
 ## Output format
 
 Return **JSON only** with shape:
+
+```json5
 {
-"items": [
-{
-"id": "m1",
-"label": "allowed|borderline|harassment|hate|threat|spam",
-"severity": 0-3,
-"reason": "short",
-"action": "allow|warn|remove|temp_mute|ban",
-"rewrite_suggestion": "optional safer rewrite (only if borderline/harassment)"
+  items: [
+    {
+      id: 'm1',
+      label: 'allowed|borderline|harassment|hate|threat|spam',
+      severity: 0, // 0 = no issue, 1 = minor, 2 = moderate, 3 = severe
+      reason: 'short',
+      action: 'allow|warn|remove|temp_mute|ban',
+      rewrite_suggestion: 'optional safer rewrite (only if borderline/harassment)',
+    },
+  ],
+  overall_notes: 'short',
 }
-],
-"overall_notes": "short"
-}
+```
 
 ## Rules
 
