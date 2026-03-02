@@ -3,6 +3,6 @@ import { defineConfig } from 'tsup';
 
 export default defineConfig({
   clean: true,
-  entry: ['src/poc/all.poc.ts'],
+  entry: ['src/poc/all.poc.ts', 'src/poc/simple.poc.ts'],
   format: 'esm'
 });
