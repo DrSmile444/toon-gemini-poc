@@ -7,6 +7,7 @@
     "poc:logs": "tsx src/poc/logs.poc.ts",
     "poc:moderation": "tsx src/poc/moderation.poc.ts",
     "poc:report": "tsx src/poc/report.poc.ts",
+    "build": "tsup",
     "lint": "cross-env TIMING=1 npx eslint",
     "lint:fix": "npm run lint -- --fix",
     "lint:debug": "npm run lint -- --debug",
@@ -15,7 +16,7 @@
     "test": "npx vitest",
     "bump-version": "npx tsx ./scripts/bump-version.script.ts && npm audit fix",
     "parse-llm-response": "npx tsx ./scripts/split-plain-code.ts",
-    "format": "npx prettier . --write",
+    "format": "npx prettier . --write"
   },
   "keywords": [
     "typescript",
@@ -67,6 +68,7 @@
     "globals": "^17.3.0",
     "json5": "^2.2.3",
     "prettier": "^3.8.1",
+    "tsup": "^8.5.1",
     "tsx": "4.21.0",
     "type-fest": "^5.4.4",
     "typescript": "5.9.3",
