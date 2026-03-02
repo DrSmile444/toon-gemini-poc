@@ -19,17 +19,40 @@ Each row is a message. Use the text as the source of truth.
 
 ## Output format
 
-Return **TOON only** with shape:
+Schema:
+
+```json5
+{
+  items: [
+    {
+      id: 'm1',
+      label: 'allowed|borderline|harassment|hate|threat|spam',
+      severity: 1, // 1 = minor, 2 = moderate, 3 = severe
+      reason: 'short',
+      action: 'allow|warn|remove|temp_mute|ban',
+      rewrite_suggestion: 'optional safer rewrite (only if borderline/harassment)',
+    },
+  ],
+  overall_notes: 'short',
+}
+```
+
+Return **TOON only** format.
+Data is in `TOON` format (2-space indent, arrays show length and fields).
+Use the same header format. Set [N] to match the row count, e.g. for 3 messages, use `items[3]`:
 
 ```toon
-items[1]{id,label,severity,reason,action,rewrite_suggestion}:
-  m1,allowed|borderline|harassment|hate|threat|spam,1,short,allow|warn|remove|temp_mute|ban,optional safer rewrite (only if borderline/harassment)
-overall_notes: short
+items[3]{id,label,severity,reason,action,rewrite_suggestion}:
+  m1,harassment,2,"uses derogatory language",temp_mute,"Consider rephrasing to avoid slurs"
+  m2,allowed,0,"normal disagreement",allow,
+  m3,borderline,1,"sarcasm that could be misinterpreted",warn,"Sarcasm can be tricky; consider adding a clarifying emoji"
+overall_notes: "While most messages were fine, message m1 contained language that violates our community guidelines and should be addressed. Message m3 is borderline due to sarcasm, which can be misunderstood, so a warning and rewrite suggestion are provided to help the user communicate more clearly while still engaging in banter."
 ```
+
+Expected output items are `items[{{data_length}}]` rows with the specified fields, plus overall notes.
 
 ## Rules
 
 - Prefer the least severe label that still keeps users safe
 - Treat sarcasm and context carefully
 - Do not add new message IDs or change message text
-- If message is ok, don't return it in the output. Output only messages that need action or borderline cases that could be safer with a rewrite

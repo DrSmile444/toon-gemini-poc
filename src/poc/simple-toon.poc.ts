@@ -41,6 +41,7 @@ const toonPayload = ['```toon', toon, '```'].join('\n');
  * */
 const prompt = Mustache.render(template, {
   data_block: toonPayload,
+  data_length: moderationPayload.msgs.length,
 });
 
 console.info(chalk.bold.magenta('Running Moderation PoC'));
