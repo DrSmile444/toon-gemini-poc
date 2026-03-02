@@ -21,8 +21,6 @@ const ai = new GoogleGenAI({ apiKey: environment.GEMINI_API_KEY });
 /**
  * Input data and prompt template
  * */
-const userRequest = 'Classify each message and propose actions. Be strict on hate/threats, but allow normal criticism and light sarcasm.';
-
 const template = await loadPromptTemplate('./src/prompt/moderation.prompt.md');
 const moderationPayload = await loadJsonFile<ModerationData>('./src/data/moderation.data.json');
 
@@ -43,12 +41,10 @@ const toonPayload = ['```toon', toon, '```'].join('\n');
  * Render prompt with Mustache
  * */
 const jsonPrompt = Mustache.render(template, {
-  user_request: userRequest,
   data_block: jsonPayload,
 });
 
 const toonPrompt = Mustache.render(template, {
-  user_request: userRequest,
   data_block: toonPayload,
 });
 
