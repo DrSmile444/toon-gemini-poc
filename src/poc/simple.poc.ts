@@ -4,6 +4,7 @@ import Mustache from 'mustache';
 
 import { getEnvironment } from '@shared/env';
 import { loadJsonFile, loadPromptTemplate } from '@shared/prompt-renderer';
+import { extractText, extractUsage, printRun } from '@shared/run-gemini';
 
 import type { ModerationData } from './moderation.poc';
 
@@ -55,12 +56,12 @@ const promptTokens = await ai.models.countTokens({
 console.info(chalk.yellow('\nPrompt json token count (countTokens):'));
 console.info(chalk.yellow(promptTokens.totalTokens));
 
-// const geminiResponse = await ai.models.generateContent({
-//   model: environment.GEMINI_MODEL,
-//   contents: [{ role: 'user', parts: [{ text: prompt }] }],
-// });
-//
-// const usageMetadata = extractUsage(geminiResponse);
-// const text = extractText(geminiResponse).trim();
-//
-// printRun('Moderation: Message classification', { promptTokens, usageMetadata, text }, prompt);
+const geminiResponse = await ai.models.generateContent({
+  model: environment.GEMINI_MODEL,
+  contents: [{ role: 'user', parts: [{ text: prompt }] }],
+});
+
+const usageMetadata = extractUsage(geminiResponse);
+const text = extractText(geminiResponse).trim();
+
+printRun('Moderation: Message classification', { promptTokens, usageMetadata, text }, prompt);
