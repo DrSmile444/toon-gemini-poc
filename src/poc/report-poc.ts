@@ -4,25 +4,27 @@ import { getEnvironment } from '@shared/env.js';
 import { loadJsonFile, loadPromptTemplate, makeDataBlock, renderPrompt } from '@shared/prompt-renderer.js';
 import { printRun, runGeminiOnce } from '@shared/run-gemini.js';
 
+interface ReportDataIncident {
+  /** Unique incident identifier. */
+  id: string;
+  /** Severity level (e.g. P1, P2). */
+  sev: string;
+  /** ISO timestamp when the incident started. */
+  start: string;
+  /** ISO timestamp when the incident was mitigated. */
+  mitigatedAt: string;
+  /** Total minutes from start to mitigation. */
+  minToMitigate: number;
+  /** Short human-readable summary of what happened. */
+  summary: string;
+  /** Description of the business or customer impact. */
+  impact: string;
+}
+
 /** Shape of the incident data loaded from `report.data.json`. */
 interface ReportData {
   /** List of incidents to include in the generated report. */
-  incidents: {
-    /** Unique incident identifier. */
-    id: string;
-    /** Severity level (e.g. P1, P2). */
-    sev: string;
-    /** ISO timestamp when the incident started. */
-    start: string;
-    /** ISO timestamp when the incident was mitigated. */
-    mitigatedAt: string;
-    /** Total minutes from start to mitigation. */
-    minToMitigate: number;
-    /** Short human-readable summary of what happened. */
-    summary: string;
-    /** Description of the business or customer impact. */
-    impact: string;
-  }[];
+  incidents: ReportDataIncident[];
 }
 
 /**

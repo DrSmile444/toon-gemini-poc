@@ -4,13 +4,23 @@ import { getEnvironment } from '@shared/env.js';
 import { loadJsonFile, loadPromptTemplate, makeDataBlock, renderPrompt } from '@shared/prompt-renderer.js';
 import { printRun, runGeminiOnce } from '@shared/run-gemini.js';
 
+interface LogsDataEvent {
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  t: string;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  svc: string;
+  lvl: string;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  msg: string;
+  trace: string;
+}
+
 /**
  * Shape of the log data loaded from `logs.data.json`.
  * Field names match the JSON keys exactly (abbreviated to minimise file size).
  */
 interface LogsData {
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  events: { t: string; svc: string; lvl: string; msg: string; trace: string }[];
+  events: LogsDataEvent[];
 }
 
 /**

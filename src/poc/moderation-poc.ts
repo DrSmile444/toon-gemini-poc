@@ -4,10 +4,16 @@ import { getEnvironment } from '@shared/env.js';
 import { loadJsonFile, loadPromptTemplate, makeDataBlock, renderPrompt } from '@shared/prompt-renderer.js';
 import { printRun, runGeminiOnce } from '@shared/run-gemini.js';
 
+interface ModerationDataMessage {
+  id: string;
+  user: string;
+  text: string;
+}
+
 /** Shape of the moderation data loaded from `moderation.data.json`. */
 interface ModerationData {
   /** List of chat messages to be classified. */
-  msgs: { id: string; user: string; text: string }[];
+  msgs: ModerationDataMessage[];
 }
 
 /**
