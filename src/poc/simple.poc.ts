@@ -53,9 +53,12 @@ const promptTokens = await ai.models.countTokens({
   contents: [{ role: 'user', parts: [{ text: prompt }] }],
 });
 
-console.info(chalk.yellow('\nPrompt json token count (countTokens):'));
+console.info(chalk.yellow('\nPrompt token count (countTokens):'));
 console.info(chalk.yellow(promptTokens.totalTokens));
 
+/**
+ * Generation request to Gemini
+ * */
 const geminiResponse = await ai.models.generateContent({
   model: environment.GEMINI_MODEL,
   contents: [{ role: 'user', parts: [{ text: prompt }] }],
