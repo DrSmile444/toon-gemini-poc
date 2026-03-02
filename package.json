@@ -4,6 +4,7 @@
   "main": "src/main.ts",
   "scripts": {
     "poc:simple": "tsx src/poc/simple.poc.ts",
+    "poc:simple-toon": "tsx src/poc/simple-toon.poc.ts",
     "poc:token-comparison": "tsx src/poc/token-comparison.poc.ts",
     "poc:all": "tsx src/poc/all.poc.ts",
     "poc:logs": "tsx src/poc/logs.poc.ts",
