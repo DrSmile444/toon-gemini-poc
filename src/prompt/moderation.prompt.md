@@ -10,12 +10,12 @@ Keep a gaming community safe while allowing normal disagreement and banter.
 
 ### User request
 
-{{user_request}}
+Classify each message and propose actions. Be strict on hate/threats, but allow normal criticism and light sarcasm.
 
 ### Messages to review
 
 Each row is a message. Use the text as the source of truth.
-{{data_block}}
+{{&data_block}}
 
 ## Output format
 
