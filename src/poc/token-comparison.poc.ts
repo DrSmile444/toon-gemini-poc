@@ -67,7 +67,9 @@ console.info(chalk.red(jsonPromptTokens.totalTokens));
 console.info(chalk.yellow('\nPrompt toon token count (countTokens):'));
 console.info(chalk.blue(toonPromptTokens.totalTokens));
 
-// Delta between json and toon token counts
+/**
+ * Delta between json and toon token counts
+ * */
 const delta = (jsonPromptTokens.totalTokens || 0) - (toonPromptTokens.totalTokens || 0);
 const deltaPercentage = ((delta / (jsonPromptTokens.totalTokens || 0)) * 100).toFixed(2);
 
