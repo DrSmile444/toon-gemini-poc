@@ -1,0 +1,151 @@
+msgs[150]{id,user,text}:
+  m001,u07,"gg, that was a clean play!"
+  m002,u31,Can someone explain how crafting works?
+  m003,u52,"brb, doorbell"
+  m004,u19,Nice skin. Where did you get it?
+  m005,u63,Stop pinging me every 2 seconds please.
+  m006,u44,"You're really bad at this, wow."
+  m007,u10,"That was a dumb move, not gonna lie."
+  m008,u83,Bro you threw the whole match.
+  m009,u28,Can you not feed like that?
+  m010,u56,This team is painful to watch.
+  m011,u02,You're a clown. Uninstall.
+  m012,u71,"Shut up, nobody asked you."
+  m013,u15,You’re useless. Stop playing ranked.
+  m014,u90,Imagine being this clueless 😂
+  m015,u34,You talk a lot for someone who’s terrible.
+  m016,u21,You’re pathetic. Just quit already.
+  m017,u47,I hope you lose every game you queue into.
+  m018,u68,"Keep whining, it’s your only skill."
+  m019,u09,You’re the reason this community sucks.
+  m020,u77,You’re a genius… not.
+  m021,u11,"If you queue again, I’m going to make you regret it."
+  m022,u05,Say that again and you'll be sorry.
+  m023,u38,I know your clan—keep it up and you’ll get targeted.
+  m024,u62,"Next time I see you, it won’t be fun for you."
+  m025,u48,I’m coming for you after this match.
+  m026,u18,Go back where you came from.
+  m027,u73,People like you don’t belong here.
+  m028,u33,Your kind always ruins everything.
+  m029,u26,We should kick them all out of this server.
+  m030,u60,They’re all the same—untrustworthy.
+  m031,u44,"DM me for cheap gold, best prices!!!"
+  m032,u44,🔥 BEST BOOSTING SERVICE 🔥 Message me now!
+  m033,u44,"Sell accounts / rank boost, fast delivery. DM."
+  m034,u44,"Visit my shop for coins: superdiscount.example"
+  m035,u44,"Free skins giveaway! Click: bit.ly/not-suspicious"
+  m036,u12,Anyone want to run duos?
+  m037,u66,Could we focus objectives instead of chasing kills?
+  m038,u08,"My mic is broken, I’ll type callouts."
+  m039,u49,"Sorry, lag spike. My bad."
+  m040,u57,WP! That clutch was insane.
+  m041,u92,Bro learn the map before you join ranked.
+  m042,u20,"You’re trolling, right?"
+  m043,u64,Stop acting like a hero and play with the team.
+  m044,u46,You’re making this harder than it needs to be.
+  m045,u03,Your aim is… questionable.
+  m046,u59,You’re toxic. Chill.
+  m047,u74,"Quit spamming chat, it’s annoying."
+  m048,u32,"If you can’t communicate, don’t queue."
+  m049,u27,Stop griefing or I’m reporting.
+  m050,u81,You’re intentionally throwing—knock it off.
+  m051,u14,"You absolute loser, uninstall already."
+  m052,u39,Your brain is offline. Don’t touch ranked.
+  m053,u53,You’re the worst player I’ve ever seen.
+  m054,u58,No one wants you on this team.
+  m055,u69,You’re embarrassing. Stop typing.
+  m056,u11,"If I see you in-game again, you'll regret it."
+  m057,u87,Keep talking and I’ll make sure you can’t play.
+  m058,u22,I’ll track you down in every match until you quit.
+  m059,u41,You better watch yourself after this.
+  m060,u06,Say one more thing and I’m coming for you.
+  m061,u16,Players from that country always cheat.
+  m062,u70,I don’t team with people like that.
+  m063,u51,Those people ruin every game they touch.
+  m064,u25,They should be banned just for being who they are.
+  m065,u80,This server is better without them.
+  m066,u44,CHEAP COINS + BOOST — DM NOW!!!
+  m067,u44,"Limited offer: rank boost 50% off. Add me!"
+  m068,u44,"Earn $$$ playing! Join my referral: promo.example"
+  m069,u44,"Follow my channel for FREE items: tinyurl.example"
+  m070,u44,SELLING GOLD FAST ✅ safe ✅ cheap ✅ DM
+  m071,u13,"ГГ, гарна гра!"
+  m072,u29,"Вибач, трохи лагало."
+  m073,u37,Можемо без образ? Просто гра.
+  m074,u55,"Та ну, це був фейл 😅"
+  m075,u67,"Не туди пішли, треба було на точку."
+  m076,u04,"Ти що, сліпий? Дивись мінікарту."
+  m077,u72,"Припини годувати, будь ласка."
+  m078,u61,Ти реально псуєш гру всім.
+  m079,u35,"Замовкни, ніхто тебе не слухає."
+  m080,u23,Ти нуль. Вийди з рейтингу.
+  m081,u82,Якщо ще раз так зробиш — пошкодуєш.
+  m082,u17,Побачу тебе знову — буде погано.
+  m083,u45,Я тебе запам'ятав. Наступного разу злию гру спеціально.
+  m084,u88,"Тримай язик за зубами, бо буде біда."
+  m085,u24,"Я зроблю так, що ти не захочеш тут грати."
+  m086,u30,Вали назад у свою країну.
+  m087,u54,Твій народ тут зайвий.
+  m088,u76,Такі як ти завжди все псують.
+  m089,u12,Їх треба всіх вигнати з сервера.
+  m090,u97,Немає вам місця в нашій спільноті.
+  m091,u40,"Реклама: дешево продам голду. Пиши в ЛС!"
+  m092,u40,Буст рангу швидко і дешево ✅ в дірект!
+  m093,u40,"Купуй монети: shop.example (найкраща ціна)"
+  m094,u40,"Розіграш скінів! Перейди за посиланням: link.example"
+  m095,u40,Підписка на мій канал = бонуси. Тисни!
+  m096,u01,Could we keep it civil? Thanks.
+  m097,u65,Let’s reset and play objectives.
+  m098,u43,I’m new—any tips for this boss?
+  m099,u78,"Don’t worry, we can still win."
+  m100,u36,Please stop typing spoilers in chat.
+  m101,u50,"You’re annoying as hell, stop talking."
+  m102,u89,Your voice is unbearable. Mute yourself.
+  m103,u11,Nobody likes you here.
+  m104,u07,You’re acting like a child. Grow up.
+  m105,u19,"You’re such a tryhard, it’s cringe."
+  m106,u83,I’m going to ruin every match you play tonight.
+  m107,u58,I’ll make sure you get kicked from every lobby.
+  m108,u22,Keep it up and you won’t be able to queue in peace.
+  m109,u62,"I’ll get you banned, even if I have to spam reports."
+  m110,u48,I’m coming after you outside the game.
+  m111,u73,People from your background are disgusting.
+  m112,u33,"Your group is inferior, always has been."
+  m113,u26,We don’t want your kind here.
+  m114,u60,They should all be excluded from this community.
+  m115,u16,Stop bringing them in—this place was fine before.
+  m116,u44,"🚨 CHEAP GOLD 🚨 Add me on Discord: seller#1234"
+  m117,u44,Boost to top rank in 24h. DM for prices.
+  m118,u44,"Click here for FREE currency: reward.example"
+  m119,u44,"Join my server for giveaways and trades: invite.example"
+  m120,u44,Best coin shop ✅ instant ✅ cheap ✅ DM me
+  m121,u91,"This is trash, uninstall."
+  m122,u18,You’re trash. Delete the game.
+  m123,u02,Your gameplay is garbage and you know it.
+  m124,u71,You’re a joke. Stop queueing.
+  m125,u15,You’re so bad it hurts to watch.
+  m126,u05,"If you join my lobby again, I’ll make you pay for it."
+  m127,u38,I’ll hunt you down every time I see your name.
+  m128,u62,"Next time you speak, there will be consequences."
+  m129,u48,I’ll make you regret logging in.
+  m130,u06,Keep talking and I’ll find a way to hurt you.
+  m131,u13,"Все ок, давайте спокійно і по плану."
+  m132,u29,"Пінгуй, коли будеш готовий."
+  m133,u37,"Хто йде на рейд о 20:00?"
+  m134,u55,"Не спойлеріть, я ще не проходив сюжет."
+  m135,u67,"Дякую за хіл, ти врятував."
+  m136,u04,"Ти тупиш. Серйозно, що з тобою?"
+  m137,u72,"Заткнись і грай, не ной."
+  m138,u61,"Ти просто токсик, від тебе голова болить."
+  m139,u35,"Ніби дорослий, а поводишся як дитина."
+  m140,u23,Тебе б в бан на тиждень за таку гру.
+  m141,u30,Такі як ти тут не потрібні.
+  m142,u54,"Ви всі однакові, тільки проблеми від вас."
+  m143,u76,Не хочу грати з людьми з вашої групи.
+  m144,u12,"Це комʼюніті має бути тільки для \"нормальних\"."
+  m145,u97,Вам тут не раді. Ідіть геть.
+  m146,u40,"ПРОДАЖ: монети/аккаунти/буст — пишіть в ЛС!!!"
+  m147,u40,🔥 -50% на буст сьогодні! Встигни! 🔥
+  m148,u40,"Безкоштовні призи! Натисни: free-stuff.example"
+  m149,u40,Підписка на мій телеграм = бонуси. Пиши!
+  m150,u40,DM for CHEAP GOLD!!! CHEAP GOLD!!! CHEAP GOLD!!!
