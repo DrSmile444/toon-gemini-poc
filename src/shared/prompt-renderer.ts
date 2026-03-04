@@ -63,6 +63,9 @@ export interface RenderPromptVariables {
  * @param variables - An object containing `user_request` and `data_block` placeholders.
  * @returns The fully rendered prompt string ready to send to the model.
  */
-export function renderPrompt(template: string, variables: RenderPromptVariables): string {
+export function renderPrompt(
+  template: string,
+  variables: RenderPromptVariables,
+): string {
   return Mustache.render(template, variables);
 }

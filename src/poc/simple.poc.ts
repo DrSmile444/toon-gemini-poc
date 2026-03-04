@@ -22,8 +22,13 @@ async function main() {
   /**
    * Input data and prompt template
    * */
-  const template = await loadPromptTemplate('./src/prompt/moderation.prompt.md');
-  const moderationPayload = await loadJsonFile<ModerationData>('./src/data/moderation.data.json');
+  const template = await loadPromptTemplate(
+    './src/prompt/moderation.prompt.md',
+  );
+
+  const moderationPayload = await loadJsonFile<ModerationData>(
+    './src/data/moderation.data.json',
+  );
 
   const json = JSON.stringify(moderationPayload, null, 2);
 
@@ -63,9 +68,17 @@ async function main() {
   });
 
   const usageMetadata = extractUsage(geminiResponse);
-  const text = extractText(geminiResponse).replace('```json', '').replace('```', '').trim();
 
-  printRun('Moderation: Message classification', { promptTokens, usageMetadata, text }, prompt);
+  const text = extractText(geminiResponse)
+    .replace('```json', '')
+    .replace('```', '')
+    .trim();
+
+  printRun(
+    'Moderation: Message classification',
+    { promptTokens, usageMetadata, text },
+    prompt,
+  );
 
   const jsonResult = JSON.parse(text) as Record<string, unknown>;
 

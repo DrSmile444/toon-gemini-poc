@@ -28,7 +28,9 @@ export function getEnvironment(): Environment {
   });
 
   if (!parsed.success) {
-    const message = parsed.error.issues.map((index) => `${index.path.join('.')}: ${index.message}`).join('\n');
+    const message = parsed.error.issues
+      .map((index) => `${index.path.join('.')}: ${index.message}`)
+      .join('\n');
 
     throw new Error(`Invalid environment variables:\n${message}`);
   }

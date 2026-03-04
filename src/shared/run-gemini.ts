@@ -66,7 +66,11 @@ export function extractUsage(geminiResponse: unknown): unknown {
     return raw.usageMetadata;
   }
 
-  if ('response' in raw && typeof raw.response === 'object' && raw.response !== null) {
+  if (
+    'response' in raw &&
+    typeof raw.response === 'object' &&
+    raw.response !== null
+  ) {
     const inner = raw.response as Record<string, unknown>;
 
     return inner.usageMetadata;
@@ -85,7 +89,10 @@ export function extractUsage(geminiResponse: unknown): unknown {
  * @param prompt      - The fully rendered prompt string to send to the model.
  * @returns A {@link GeminiRunResult} containing the model text, token count, and usage metadata.
  */
-export async function runGeminiOnce(environment: Environment, prompt: string): Promise<GeminiRunResult> {
+export async function runGeminiOnce(
+  environment: Environment,
+  prompt: string,
+): Promise<GeminiRunResult> {
   const ai = new GoogleGenAI({ apiKey: environment.GEMINI_API_KEY });
 
   const promptTokens = await ai.models.countTokens({
@@ -115,10 +122,19 @@ export async function runGeminiOnce(environment: Environment, prompt: string): P
  * @param result        - The {@link GeminiRunResult} to display.
  * @param promptPreview - The full prompt string (only the first 600 chars are shown).
  */
-export function printRun(title: string, result: GeminiRunResult, promptPreview: string) {
+export function printRun(
+  title: string,
+  result: GeminiRunResult,
+  promptPreview: string,
+) {
   console.info(chalk.bold.cyan(`\n=== ${title} ===`));
   console.info(chalk.dim('Prompt preview (first 600 chars):'));
-  console.info(chalk.gray(promptPreview.slice(0, 600) + (promptPreview.length > 600 ? '…' : '')));
+
+  console.info(
+    chalk.gray(
+      promptPreview.slice(0, 600) + (promptPreview.length > 600 ? '…' : ''),
+    ),
+  );
 
   console.info(chalk.yellow('\nPrompt token count (countTokens):'));
   console.info(chalk.gray(safeStringify(result.promptTokens)));

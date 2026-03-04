@@ -1,7 +1,12 @@
 import chalk from 'chalk';
 
 import { getEnvironment } from '@shared/env.js';
-import { loadJsonFile, loadPromptTemplate, makeDataBlock, renderPrompt } from '@shared/prompt-renderer.js';
+import {
+  loadJsonFile,
+  loadPromptTemplate,
+  makeDataBlock,
+  renderPrompt,
+} from '@shared/prompt-renderer.js';
 import { printRun, runGeminiOnce } from '@shared/run-gemini.js';
 
 export interface ModerationDataMessage {
@@ -29,16 +34,29 @@ async function main() {
 
   const format: 'json' | 'toon' = 'toon';
 
-  const userRequest = 'Classify each message and propose actions. Be strict on hate/threats, but allow normal criticism and light sarcasm.';
+  const userRequest =
+    'Classify each message and propose actions. Be strict on hate/threats, but allow normal criticism and light sarcasm.';
 
-  const template = await loadPromptTemplate('./src/prompt/moderation.prompt.md');
-  const moderationPayload = await loadJsonFile<ModerationData>('./src/data/moderation.data.json');
+  const template = await loadPromptTemplate(
+    './src/prompt/moderation.prompt.md',
+  );
+
+  const moderationPayload = await loadJsonFile<ModerationData>(
+    './src/data/moderation.data.json',
+  );
 
   const dataBlock = makeDataBlock(moderationPayload, format);
-  const prompt = renderPrompt(template, { user_request: userRequest, data_block: dataBlock });
+
+  const prompt = renderPrompt(template, {
+    user_request: userRequest,
+    data_block: dataBlock,
+  });
 
   console.info(chalk.bold.magenta('Running Moderation PoC'));
-  console.info(chalk.dim(`Model: ${environment.GEMINI_MODEL} | Format: ${format}`));
+
+  console.info(
+    chalk.dim(`Model: ${environment.GEMINI_MODEL} | Format: ${format}`),
+  );
 
   const result = await runGeminiOnce(environment, prompt);
 

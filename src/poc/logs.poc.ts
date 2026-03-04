@@ -1,7 +1,12 @@
 import chalk from 'chalk';
 
 import { getEnvironment } from '@shared/env.js';
-import { loadJsonFile, loadPromptTemplate, makeDataBlock, renderPrompt } from '@shared/prompt-renderer.js';
+import {
+  loadJsonFile,
+  loadPromptTemplate,
+  makeDataBlock,
+  renderPrompt,
+} from '@shared/prompt-renderer.js';
 import { printRun, runGeminiOnce } from '@shared/run-gemini.js';
 
 interface LogsDataEvent {
@@ -35,16 +40,24 @@ async function main() {
 
   const format: 'json' | 'toon' = 'toon';
 
-  const userRequest = 'Explain what likely happened, what the primary root cause is, and what we should do to prevent it. Keep it crisp.';
+  const userRequest =
+    'Explain what likely happened, what the primary root cause is, and what we should do to prevent it. Keep it crisp.';
 
   const template = await loadPromptTemplate('./src/prompt/logs.prompt.md');
   const logsPayload = await loadJsonFile<LogsData>('./src/data/logs.data.json');
 
   const dataBlock = makeDataBlock(logsPayload, format);
-  const prompt = renderPrompt(template, { user_request: userRequest, data_block: dataBlock });
+
+  const prompt = renderPrompt(template, {
+    user_request: userRequest,
+    data_block: dataBlock,
+  });
 
   console.info(chalk.bold.magenta('Running Logs PoC'));
-  console.info(chalk.dim(`Model: ${environment.GEMINI_MODEL} | Format: ${format}`));
+
+  console.info(
+    chalk.dim(`Model: ${environment.GEMINI_MODEL} | Format: ${format}`),
+  );
 
   const result = await runGeminiOnce(environment, prompt);
 
