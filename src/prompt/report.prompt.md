@@ -11,7 +11,7 @@ Generate a human-friendly incident report from structured rows.
 ### Incident table
 
 Use only the rows in the table.
-{{data_block}}
+{{&data_block}}
 
 ## Output requirements
 

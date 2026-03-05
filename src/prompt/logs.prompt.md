@@ -11,7 +11,7 @@ You are an incident investigator. Turn raw event rows into a clear root-cause na
 ### Event data
 
 Data is provided below. Treat it as the ground truth timeline.
-{{data_block}}
+{{&data_block}}
 
 ## Output requirements
 
